@@ -1,6 +1,6 @@
 <?php
 // Project name
-define('PROJECT_NAME', 'blog_vs20_1');
+define('PROJECT_NAME', 'at21');
 // App root dir
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL root
@@ -8,7 +8,7 @@ define('URLROOT', 'http://'.$_SERVER['HTTP_HOST'].'/'.PROJECT_NAME);
 
 // db params
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'blog_vs20_1');
+define('DB_USER', 'arendaja');
+define('DB_PASS', 'qwerty');
+define('DB_NAME', 'at21');
 

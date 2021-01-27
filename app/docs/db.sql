@@ -1,22 +1,39 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 18, 2021 at 03:39 AM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Host: localhost:3306
+-- Generation Time: Jan 27, 2021 at 04:09 PM
+-- Server version: 8.0.22-0ubuntu0.20.04.3
+-- PHP Version: 7.4.3
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Database: `blog_vs20_1`
+-- Database: `at21`
 --
-CREATE DATABASE IF NOT EXISTS `blog_vs20_1` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `blog_vs20_1`;
+CREATE DATABASE IF NOT EXISTS `at21` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `at21`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `title` text NOT NULL,
+  `content` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -26,12 +43,12 @@ USE `blog_vs20_1`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created` date NOT NULL DEFAULT current_timestamp(),
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
