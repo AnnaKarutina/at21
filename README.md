@@ -9,7 +9,7 @@ Järgmised paketid on vajalikud:
 
 * php
 ```
-sudo apt-get install php7.4 libapache2-mod-php7.4 php7.4-mysql
+sudo apt-get install php7.4 php7.4-mysql
 ```
 
 * MySQL
@@ -48,9 +48,17 @@ Andmebaasi struktuuri dump fail on leitaitav [siin](https://github.com/AnnaKarut
 
 ## Testimine
 
+Testimiseks tuleb käivitada kataloogis, kus on asumas projektikaust php enda veebiserverit:
+```
+php -S localhost:8000 -t projektikataloog
+```
 Testimiseks tuleb vaadata veebilehitsejal projekti näiteks aadressil:
 ```
-http://localhost/at21/users/register
+http://localhost:8000/public/
+```
+või kui seadistatud täielik veebiserveri koos suunamisega läbi .htaccessi
+```
+http://localhost:8000/users/register
 ```
 
 ## Built With
@@ -63,6 +71,6 @@ http://localhost/at21/users/register
 kasutame [SemVer](http://semver.org/) versioneerimiseks.
 Hetkel meil on üks versioon 1.0.0
 
-## License
+## Litsens
 
 Antud projekt on MIT License litsentsiga.
